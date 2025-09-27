@@ -1,2 +1,2 @@
 # ECommRepo
-A repository specifically for my E-Commerce labs and final assignment submission
+A repository specifically for my E-Commerce final assignment submission
