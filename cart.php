@@ -1,20 +1,12 @@
 <?php
 // cart.php - Shopping Cart Page
-require_once 'settings/core.php';
+require_once __DIR__ . '/settings/core.php';
+require_once __DIR__ . '/controllers/cart_controller.php';
 session_start();
-// For MVP: fetch cart from session
+// Fetch cart items via controller (MVC)
 $cart = [];
 if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
-    // Placeholder: fetch product details for each product_id
-    foreach ($_SESSION['cart'] as $product_id => $qty) {
-        // TODO: Replace with real DB fetch
-        $cart[] = [
-            'id' => $product_id,
-            'name' => 'Product #' . $product_id,
-            'quantity' => $qty,
-            'price' => 10.00, // Placeholder price
-        ];
-    }
+    $cart = get_cart_items_ctr($_SESSION['cart']);
 }
 ?>
 <!DOCTYPE html>

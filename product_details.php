@@ -1,21 +1,13 @@
 <?php
 // product_details.php - Product Details Page
-require_once 'settings/core.php';
-require_once 'controllers/customer_controller.php';
+require_once __DIR__ . '/settings/core.php';
+require_once __DIR__ . '/controllers/product_controller.php';
 session_start();
 // Get product ID from query
 $id = $_GET['id'] ?? null;
 $product = null;
-// TODO: Fetch product details using controller
 if ($id) {
-    // Placeholder: Replace with real DB fetch
-    $product = [
-        'id' => $id,
-        'name' => 'Product #' . $id,
-        'image' => 'https://via.placeholder.com/200',
-        'description' => 'Description for product #' . $id,
-        'price' => 10.00,
-    ];
+    $product = get_product_by_id_ctr($id);
 }
 ?>
 <!DOCTYPE html>

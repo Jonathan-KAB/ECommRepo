@@ -38,8 +38,9 @@ $orders = [];
         </div>
     </nav>
     <div class="container mt-4">
-        <h1><i class="fas fa-store"></i> Seller Dashboard</h1>
-        <p class="text-muted">Manage your products and view your orders.</p>
+    <h1><i class="fas fa-store"></i> Seller Dashboard</h1>
+    <p class="text-muted">Manage your products and view your orders.</p>
+    <a href="login/logout.php" class="btn btn-danger mb-3"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
         <div class="row mt-4">
             <div class="col-md-6">
                 <div class="card">

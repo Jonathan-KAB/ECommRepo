@@ -1,6 +1,12 @@
-<?php
 
-require_once '../classes/user_class.php';
+<?php
+function update_user_ctr($id, $name, $phone_number, $country, $city)
+{
+    $user = new User($id);
+    return $user->updateUser($name, $phone_number, $country, $city);
+}
+
+require_once __DIR__ . '/../classes/user_class.php';
 
 
 

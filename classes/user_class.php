@@ -1,11 +1,5 @@
 <?php
-
-require_once '../settings/db_class.php';
-
-/**
- * 
- */
-
+require_once __DIR__ . '/../settings/db_class.php';
 
 class User extends db_connection
 {
@@ -22,9 +16,25 @@ class User extends db_connection
     public function __construct($id = null)
     {
         parent::db_connect();
-        if ($id) {
-            $this->id = $id;
-            $this->loadUser();
+	if ($id) {
+	    $this->id = $id;
+	    $this->loadUser();
+	}
+    }
+
+    public function updateUser($name, $phone_number, $country, $city)
+    {
+        $stmt = $this->db->prepare("UPDATE users SET name = ?, phone_number = ?, country = ?, city = ? WHERE id = ?");
+        if (!$stmt) {
+            error_log('Prepare failed: ' . $this->db->error);
+            return false;
+        }
+        $stmt->bind_param("ssssi", $name, $phone_number, $country, $city, $this->id);
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            error_log('Execute failed: ' . $stmt->error);
+            return false;
         }
     }
 

@@ -7,11 +7,14 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-require_once 'settings/core.php';
+require_once __DIR__ . '/settings/core.php';
+require_once __DIR__ . '/controllers/user_controller.php';
+// You may want to add an order_controller for fetching orders in the future
 
-$user_name = $_SESSION['user_name'] ?? 'User';
-$user_email = $_SESSION['user_email'] ?? '';
-$user_role = $_SESSION['user_role'] ?? 'buyer';
+$user = get_user_by_email_ctr($_SESSION['user_email']);
+$user_name = $user['name'] ?? 'User';
+$user_email = $user['email'] ?? '';
+$user_role = $user['role'] ?? 'buyer';
 
 // Redirect sellers to seller dashboard
 if ($user_role === 'seller') {
@@ -19,7 +22,7 @@ if ($user_role === 'seller') {
     exit();
 }
 
-// TODO: Fetch user's orders and other data
+// TODO: Fetch user's orders and other data via controller
 $orders = [];
 ?>
 <!DOCTYPE html>
@@ -52,6 +55,7 @@ $orders = [];
             <div class="col-md-12">
                 <h1><i class="fas fa-tachometer-alt"></i> Dashboard</h1>
                 <p class="text-muted">Welcome to your SeamLink dashboard</p>
+                <a href="login/logout.php" class="btn btn-danger mt-2"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
             </div>
         </div>
 
@@ -62,7 +66,7 @@ $orders = [];
                         <i class="fas fa-user fa-3x text-primary mb-3"></i>
                         <h5 class="card-title">Profile</h5>
                         <p class="card-text">Manage your account information</p>
-                        <a href="#" class="btn btn-primary">View Profile</a>
+                        <a href="profile.php" class="btn btn-primary">View Profile</a>
                     </div>
                 </div>
             </div>
@@ -72,7 +76,7 @@ $orders = [];
                         <i class="fas fa-shopping-bag fa-3x text-success mb-3"></i>
                         <h5 class="card-title">My Orders</h5>
                         <p class="card-text">Track your order history</p>
-                        <a href="#" class="btn btn-success">View Orders</a>
+                        <a href="orders.php" class="btn btn-success">View Orders</a>
                     </div>
                 </div>
             </div>
