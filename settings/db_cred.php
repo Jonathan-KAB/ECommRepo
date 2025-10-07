@@ -20,9 +20,6 @@ if (!defined("PASSWD")) {
     define("PASSWD", "");
 }
 
-    // Use the database name from the provided SQL dump
-    define("DATABASE", "shoppn");
-}
 if (!defined("DATABASE")) {
     define("DATABASE", "seamlink_mvp");
 }

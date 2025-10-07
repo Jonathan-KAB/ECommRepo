@@ -31,6 +31,7 @@ $(document).ready(function() {
         $.ajax({
             url: '../actions/register_user_action.php',
             type: 'POST',
+            dataType: 'json', // Specify that we expect JSON response
             data: {
                 name: name,
                 email: email,

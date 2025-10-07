@@ -19,7 +19,7 @@
                 </div>
                 <div class="register-right">
                     <div style="width:100%;display:flex;align-items:center;justify-content:center;min-height:calc(100vh - 160px);">
-                        <form method="POST" action="../actions/register_action.php" class="register-form" id="register-form">
+                        <form method="POST" action="../actions/register_user_action.php" class="register-form" id="register-form">
                             <h2>Create Account</h2>
                             <div class="input-field">
                                 <input type="text" id="name" name="name" required placeholder=" ">
@@ -105,5 +105,9 @@
                     }
                 }, 3500);
             </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="../js/register.js"></script>
     </body>
     </html>

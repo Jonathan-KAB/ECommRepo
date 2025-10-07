@@ -41,50 +41,57 @@
 									</div>
 								</div>
 							</nav>
-				<section class="hero-section">
-					<div class="container">
-						<h1>Discover African Fashion, Seamlessly</h1>
-						<p>Shop authentic kente, ankara, and more from top African designers. SeamLink connects you to the continent's best styles.</p>
-						<a href="#products" class="btn">Shop Now</a>
-					</div>
-				</section>
-				<section class="featured-products" id="products">
-					<div class="container">
-						<h2 class="mb-4 text-center fw-bold">Featured Products</h2>
-						<div class="row g-4">
-							<div class="col-md-4 col-12">
-								<div class="card product-card">
-									<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" class="product-img" alt="Kente Fabric">
-									<div class="card-body">
-										  <div class="product-title">Kente Fabric</div>
-										  <div class="product-price">GHC 540.00</div>
-										<button class="btn btn-sm btn-outline-success mt-2">Add to Cart</button>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 col-12">
-								<div class="card product-card">
-									<img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80" class="product-img" alt="Ankara Dress">
-									<div class="card-body">
-										  <div class="product-title">Ankara Dress</div>
-										  <div class="product-price">GHC 720.00</div>
-										<button class="btn btn-sm btn-outline-success mt-2">Add to Cart</button>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 col-12">
-								<div class="card product-card">
-									<img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" class="product-img" alt="Beaded Necklace">
-									<div class="card-body">
-										  <div class="product-title">Beaded Necklace</div>
-										  <div class="product-price">GHC 300.00</div>
-										<button class="btn btn-sm btn-outline-success mt-2">Add to Cart</button>
-									</div>
-								</div>
+	<?php
+	// Dynamically load main content managed by admin
+	if (file_exists('main_content.html')) {
+		include 'main_content.html';
+	} else {
+	?>
+		<section class="hero-section">
+			<div class="container">
+				<h1>Discover African Fashion, Seamlessly</h1>
+				<p>Shop authentic kente, ankara, and more from top African designers. SeamLink connects you to the continent's best styles.</p>
+				<a href="#products" class="btn">Shop Now</a>
+			</div>
+		</section>
+		<section class="featured-products" id="products">
+			<div class="container">
+				<h2 class="mb-4 text-center fw-bold">Featured Products</h2>
+				<div class="row g-4">
+					<div class="col-md-4 col-12">
+						<div class="card product-card">
+							<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" class="product-img" alt="Kente Fabric">
+							<div class="card-body">
+								<div class="product-title">Kente Fabric</div>
+								<div class="product-price">GHC 540.00</div>
+								<button class="btn btn-sm btn-outline-success mt-2">Add to Cart</button>
 							</div>
 						</div>
 					</div>
-				</section>
+					<div class="col-md-4 col-12">
+						<div class="card product-card">
+							<img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80" class="product-img" alt="Ankara Dress">
+							<div class="card-body">
+								<div class="product-title">Ankara Dress</div>
+								<div class="product-price">GHC 720.00</div>
+								<button class="btn btn-sm btn-outline-success mt-2">Add to Cart</button>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-12">
+						<div class="card product-card">
+							<img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" class="product-img" alt="Beaded Necklace">
+							<div class="card-body">
+								<div class="product-title">Beaded Necklace</div>
+								<div class="product-price">GHC 300.00</div>
+								<button class="btn btn-sm btn-outline-success mt-2">Add to Cart</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	<?php } ?>
 							   <footer class="text-center py-4">
 								&copy; 2025 SeamLink. All rights reserved.
 							</footer>
